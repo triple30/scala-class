@@ -1,0 +1,9 @@
+import cats._, cats.data._
+val x = Writer("msg", 1)
+import cats.instances.all._
+val y = x.flatMap(v => Writer("add 2", v + 2))
+val z = y.flatMap(v => Writer("times 3", v * 3))
+type Logged[A] = Writer[Vector[String], A]
+type Logged[A] = Writer[Vector[String], A]
+import cats.syntax.applicative._
+type Logged[A] = Writer[Vector[String], A]
